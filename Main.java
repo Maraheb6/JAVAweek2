@@ -171,33 +171,38 @@ try {
 
         else {
             return false;}
+
     }
 
     public static void playerMove(char[][]gameBord) {
 
-            int player = 1;
-
-            Scanner s = new Scanner(System.in);
-            System.out.println("Where Would you like to play? (1-9)");
-            int move = s.nextInt();
-
-            boolean result = isValid(move, gameBord);
-            while (!result) {
-                //System.out.println("is not a valid move");
 
 
-                System.out.println("Where Would you like to play? (1-9)");
-                move = s.nextInt();
+           int player = 1;
 
-                result = isValid(move, gameBord);
+           Scanner s = new Scanner(System.in);
+           System.out.println("Where Would you like to play? (1-9)");
+           int move = s.nextInt();
 
-            }
+           boolean result = isValid(move, gameBord);
+           while (!result) {
+               System.out.println("is not a valid move");
 
-            updateGB(player, move, gameBord);
 
+
+               System.out.println("Where Would you like to play? (1-9)");
+               move = s.nextInt();
+
+
+               result = isValid(move, gameBord);
+
+           }
+           updateGB(player, move, gameBord);
 
 
     }
+
+
 
 
     public static void computerMove(char[][]gamrBord){
